@@ -6,17 +6,19 @@
   "packageRules": [
     {
       "description": "Auto-merge patch updates for stable packages (non-0.x)",
-      "matchUpdateTypes": ["patch"],
-      "matchCurrentVersion": "!/^0/",
-      "excludePackageNames": [
-        "electron",
-        "vite",
-        "sqlite3",
-        "typeorm"
+      "matchUpdateTypes": [
+        "patch"
       ],
+      "matchCurrentVersion": "!/^0/",
       "automerge": true,
       "automergeType": "pr",
-      "automergeStrategy": "squash"
+      "automergeStrategy": "squash",
+      "matchPackageNames": [
+        "!electron",
+        "!vite",
+        "!sqlite3",
+        "!typeorm"
+      ]
     },
     {
       "description": "Critical packages - manual review always",

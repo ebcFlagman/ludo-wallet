@@ -2,5 +2,33 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "packageRules": [
+    {
+      "description": "Auto-merge patch updates for stable packages (non-0.x)",
+      "matchUpdateTypes": ["patch"],
+      "matchCurrentVersion": "!/^0/",
+      "excludePackageNames": [
+        "electron",
+        "vite",
+        "sqlite3",
+        "typeorm"
+      ],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash"
+    },
+    {
+      "description": "Critical packages - manual review always",
+      "matchPackageNames": [
+        "electron",
+        "vite",
+        "react",
+        "react-dom",
+        "sqlite3",
+        "typeorm"
+      ],
+      "automerge": false
+    }
   ]
 }

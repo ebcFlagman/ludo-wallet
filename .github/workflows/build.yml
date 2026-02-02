@@ -1,0 +1,41 @@
+name: Build
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6.0.2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v6.2.0
+        with:
+          node-version: '25'
+          cache: 'npm'
+
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build renderer
+        run: npm run build:renderer
+      
+      - name: Build main process
+        run: npm run build:main
+      
+      - name: Check build artifacts
+        run: |
+          ls -la dist/
+          ls -la dist/main/

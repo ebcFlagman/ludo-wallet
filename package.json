@@ -52,7 +52,7 @@
     "cross-env": "10.1.0",
     "electron": "41.2.0",
     "electron-builder": "26.8.1",
-    "postcss": "8.5.9",
+    "postcss": "8.5.10",
     "tailwind-merge": "3.5.0",
     "tailwindcss": "4.2.2",
     "tailwindcss-animate": "1.0.7",

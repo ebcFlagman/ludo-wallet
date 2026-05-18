@@ -37,7 +37,7 @@
     "react-dom": "19.2.5",
     "reflect-metadata": "0.2.2",
     "sqlite3": "5.1.7",
-    "typeorm": "0.3.28"
+    "typeorm": "0.3.30"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.2.4",

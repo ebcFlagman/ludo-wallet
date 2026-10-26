@@ -51,7 +51,7 @@
     "concurrently": "10.0.6",
     "cross-env": "10.1.0",
     "electron": "45.0.0",
-    "electron-builder": "26.15.3",
+    "electron-builder": "26.18.0",
     "postcss": "8.5.31",
     "tailwind-merge": "3.6.0",
     "tailwindcss": "4.3.3",
